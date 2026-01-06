@@ -4,9 +4,11 @@ Start
 
 Load user profile data
 Set recommendationGenerated = false
+Set retryCount = 0
 
-While recommendationGenerated = false do
+While recommendationGenerated = false AND retryCount < 3 do
     Analyze user skills and interests
+    Increment retryCount by 1
     If sufficient data is available then
         Generate career recommendations
         Display recommendations to user
