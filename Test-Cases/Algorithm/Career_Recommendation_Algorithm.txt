@@ -7,13 +7,11 @@ Set recommendationGenerated = false
 
 While recommendationGenerated = false do
     Analyze user skills and interests
-    If sufficient data is available then
-        Generate career recommendations
-        Display recommendations to user
-        Set recommendationGenerated = true
-    Else
-        Prompt user to update profile information
-    End If
-End While
-
-End
+   If sufficient data is available AND dataQuality = high then
+    Generate career recommendations
+    Display recommendations to user
+    Set recommendationGenerated = true
+Else
+    Display message: "Please complete your profile with accurate information"
+    Prompt user to update profile information
+End If
